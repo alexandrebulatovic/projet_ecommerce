@@ -1,0 +1,44 @@
+Note : Ce fichier donne une liste de tests fait sur les fonctionnalités et aide aussi à comprendre le fonctionnement du site.
+Environnement : Windows 10 64bits et WAMP 3.0.6 64bits
+
+|Configuration avant chaque test :
+ -------------------------------
+L'utilisateur est déconnecté et il n'y a pas de fichier SESSION pour l'utilisateur, il n'y a pas de cookies enregistrés par le site.
+
+ 
+-------------------------------------
+Liste d’objectifs fonctionnels testés
+-------------------------------------
+
+	|Pour l'administrateur :
+	 -----------------------
+
+	- L'administrateur doit pouvoir utiliser les mêmes fonctionnalités que l'utilisateur. => OK
+	
+	- Il doit pouvoir supprimer un produit. => OK et la BD est MAJ
+	
+	- Il doit pouvoir ajouter un produit en mentionnant tous les champs requis. => OK et BD MAJ
+	
+	- Il doit pouvoir s'enlever les droits d'administrateur. => OK formulaire et la BD est MAJ.
+
+
+	|Pour l'utilisateur (inscrit ou non inscrit au site ) :
+	 ---------------------------------------------------
+	 
+	- L'utilisateur doit pouvoir s'inscrire sur le site via le formulaire d'inscription en mentionnant obligatoirement tous les champs. => OK et la BD est bien MAJ & la validation par lien fonctionne aussi & affichage message si l'email existe déjà dans la BD
+	
+	- L'utilisateur doit pouvoir se connecter sur son compte via le formulaire de connexion. => OK et la var SESSION est bien MAJ
+	
+	- L'utilisateur doit pouvoir se déconnecter de son compte via le lien de déconnexion. => OK et la var SESSION est bien MAJ
+	
+	- L'utilisateur doit pouvoir ajouter un ou plusieurs produits à son panier en cliquant sur le lien "Ajouter au panier". => OK est la var COOKIE est bien MAJ
+	
+	- L'utilisateur doit conserver son panier s'il se connecte/déconnecte. => OK
+	
+	- L'utilisateur doit être déconnecté automatiquement (par sécurité) au bout de 30 minutes d'inactivité. => OK avec le temps modifié à 10 secondes
+	
+	- L'utilisateur doit pouvoir voir son panier en étant connecté ou déconnecté. => OK
+	
+	- L'utilisateur doit pouvoir valider sa commande en payant (de façon factice) le panier, si celui-ci n'est pas vide et s'il est connecté. => OK & affichage message si non connecté & la BD est bien MAJ si réussite
+	
+	- L'utilisateur doit pouvoir supprimer des produits de son panier, jusqu'à le rendre vide. => OK et la var COOKIE est MAJ
